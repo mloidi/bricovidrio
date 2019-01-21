@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import Menu from './Components/Menu';
+import Home from './Components/Home';
+import About from './Components/About';
+import Products from './Components/Products';
+import Projects from './Components/Projects';
+import Location from './Components/Location';
+import Contact from './Components/Contact';
+import NotFound from './Components/NotFound';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div>
+          <Menu />
+          <div>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/nosotros" component={About} />
+              <Route exact path="/productos" component={Products} />
+              <Route exact path="/trabajos" component={Projects} />
+              <Route exact path="/ubicacion" component={Location} />
+              <Route exact path="/contacto" component={Contact} />
+              <Route component={NotFound} />
+            </Switch>
+          </div>
+        </div>
+      </Router>
     );
   }
 }
