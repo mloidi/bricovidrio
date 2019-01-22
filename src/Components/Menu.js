@@ -74,7 +74,7 @@ export const NavStyles = styled.ul`
     text-transform: uppercase;
     text-decoration: none;
     font-size: 0.7em;
-    font-weight: 900;
+    font-weight: 700;
     cursor: pointer;
     &:before {
       content: '';
