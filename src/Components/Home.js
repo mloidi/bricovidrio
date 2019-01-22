@@ -21,14 +21,13 @@ export const CarouselDiv = styled.div`
 `;
 
 export const CarouselButton = styled.button`
-  font-size: 3rem;
-  color: #1352b1;
+  font-size: 1.5rem;
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 10px;
+  opacity: 1;
   cursor: pointer;
-  background-color: Transparent;
-  background-repeat: no-repeat;
-  border: none;
-  overflow: hidden;
-  outline: none;
 `;
 
 export const HomeDetail = styled.div`
@@ -68,9 +67,17 @@ class Home extends Component {
           <title>Cristaleria Bricovidrio</title>
         </Helmet>
         <CarouselDiv>
-          <Carousel //     <FontAwesomeIcon icon={faAngleDoubleRight} /> //   <CarouselButton onClick={nextSlide}> // renderCenterRightControls={({ nextSlide }) => ( // )} //   </CarouselButton> //     <FontAwesomeIcon icon={faAngleDoubleLeft} /> //   <CarouselButton onClick={previousSlide}> // renderCenterLeftControls={({ previousSlide }) => (
-            //   </CarouselButton>
-            // )}
+          <Carousel
+            renderCenterLeftControls={({ previousSlide }) => (
+              <CarouselButton onClick={previousSlide}>
+                <FontAwesomeIcon icon={faAngleDoubleLeft} />
+              </CarouselButton>
+            )}
+            renderCenterRightControls={({ nextSlide }) => (
+              <CarouselButton onClick={nextSlide}>
+                <FontAwesomeIcon icon={faAngleDoubleRight} />
+              </CarouselButton>
+            )}
             cellAlign="center"
             cellSpacing={10}
             slidesToShow={2}
