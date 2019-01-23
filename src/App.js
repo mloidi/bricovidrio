@@ -9,6 +9,7 @@ import Projects from './Components/Projects';
 import Location from './Components/Location';
 import Contact from './Components/Contact';
 import NotFound from './Components/NotFound';
+import Footer from './Components/Footer';
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
               <Route component={NotFound} />
             </Switch>
           </div>
+          <Footer></Footer>
         </div>
       </Router>
     );

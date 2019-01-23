@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import { NavLink as Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Carousel from 'nuka-carousel';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAngleDoubleRight,
-  faAngleDoubleLeft
+  faAngleDoubleLeft,
+  faLongArrowAltRight
 } from '@fortawesome/free-solid-svg-icons';
 
 import styled from 'styled-components';
 
 export const HomePage = styled.div`
-  margin: 0 2rem 0 2rem;
   width: 100%;
 `;
 
@@ -33,36 +34,85 @@ export const CarouselButton = styled.button`
 export const HomeDetail = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
-  margin: 1rem 0 1rem 0;
-  width: 100%;
+  margin: 2rem 0 1rem 0;
 `;
-export const HomeDetailElement = styled.div`
+
+export const HomeDetailElementLeft = styled.div`
   background-color: white;
-  margin: 0 1rem 0 1rem;
+  margin: 0 1rem 0 4rem;
   padding: 0 2rem 0 2rem;
   display: grid;
   grid-template-columns: auto auto;
 `;
-export const HomeDetailElementTextDiv = styled.div`
+
+export const HomeDetailElementRight = styled.div`
+  background-color: white;
+  margin: 0 4rem 0 1rem;
+  padding: 0 2rem 0 2rem;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: auto auto;
 `;
+
+export const HomeDetailElementTextDiv = styled.div`
+  font-size: 1rem;
+`;
+
+export const HomeDetailElementTitle = styled.div`
+  color: #1352b1;
+  text-transform: uppercase;
+  margin: 1rem 0.2rem 0 0.5rem;
+`;
+
+export const HomeDetailElementSubTitle = styled.div`
+  margin: 0.2rem 0.2rem 0 0.5rem;
+`;
+
 export const HomeDetailElementText = styled.div`
-  margin: 0 0.2rem 0 0.5rem;
+  margin: 0.5rem 0.2rem 1rem 0.5rem;
+  font-size: 0.9rem;
+  color: grey;
 `;
+
+export const HomeDetailElementImg = styled.div`
+  margin: 1rem 0 1rem 0;
+`;
+
 export const HomeSystemGlassDiv = styled.div`
   background-color: white;
-  margin: 1rem 1rem 0 1rem;
+  margin: 1rem 4rem 0 4rem;
   grid-column-start: 1;
   grid-column-end: 3;
   display: flex;
   justify-content: center;
 `;
 
+export const LinkDiv = styled.div`
+  background-color: #1352b1;
+  padding: 0.5rem;
+  margin: 0.2rem 0.2rem 0 0.5rem;
+  display: inline-block;
+  .link {
+    border: 0;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      outline: none;
+      border-bottom: 1px white solid;
+      &:after {
+        width: calc(100% - 60px);
+      }
+    }
+  }
+`;
+
 class Home extends Component {
   render() {
     return (
-      <div>
+      <HomePage>
         <Helmet>
           <title>Cristaleria Bricovidrio</title>
         </Helmet>
@@ -82,7 +132,6 @@ class Home extends Component {
             cellSpacing={10}
             slidesToShow={2}
             wrapAround={true}
-            enableKeyboardControls={true}
             autoplay={true}
             autoplayInterval={2000}
           >
@@ -96,46 +145,64 @@ class Home extends Component {
           </Carousel>
         </CarouselDiv>
         <HomeDetail>
-          <HomeDetailElement>
-            <img
-              src="./img/d-decoracion-vidrio.png"
-              alt="d-decoracion-vidrio"
-            />
+          <HomeDetailElementLeft>
+            <HomeDetailElementImg>
+              <img
+                src="./img/d-decoracion-vidrio.png"
+                alt="d-decoracion-vidrio"
+              />
+            </HomeDetailElementImg>
             <HomeDetailElementTextDiv>
-              <HomeDetailElementText>VINILOS DECORATIVOS</HomeDetailElementText>
-              <HomeDetailElementText>
+              <HomeDetailElementTitle>
+                VINILOS DECORATIVOS
+              </HomeDetailElementTitle>
+              <HomeDetailElementSubTitle>
                 Para su hogar o negocio
-              </HomeDetailElementText>
+              </HomeDetailElementSubTitle>
               <HomeDetailElementText>
                 Una nueva tendencia en decoración que permite, de manera rápida
                 y sencilla, decorar tu casa o tu negocio a tu gusto,
                 convirtiéndolo en un espacio personalizado. Aquí encontrarás
                 muchas ideas para ayudarte en la elección.
               </HomeDetailElementText>
+              <LinkDiv>
+                <Link className="link" to={'/trabajos'}>
+                  Trabajos de vinilos{' '}
+                  <FontAwesomeIcon icon={faLongArrowAltRight} />
+                </Link>
+              </LinkDiv>
             </HomeDetailElementTextDiv>
-          </HomeDetailElement>
-          <HomeDetailElement>
-            <img src="./img/d-vinilos.png" alt="d-vinilos" />
+          </HomeDetailElementLeft>
+          <HomeDetailElementRight>
+            <HomeDetailElementImg>
+              <img src="./img/d-vinilos.png" alt="d-vinilos" />
+            </HomeDetailElementImg>
             <HomeDetailElementTextDiv>
-              <HomeDetailElementText>
+              <HomeDetailElementTitle>
                 SERVICIO A PROFESIONALES
-              </HomeDetailElementText>
-              <HomeDetailElementText>
+              </HomeDetailElementTitle>
+              <HomeDetailElementSubTitle>
                 Instalaciones Comerciales
-              </HomeDetailElementText>
+              </HomeDetailElementSubTitle>
               <HomeDetailElementText>
                 Fabricación propia de espejos a medida, puertas correderas,
                 separaciones de ambiente, encimeras para cocina y baños.
                 Acristalamientos para obras, ventanas, escaparates y espejos.
                 Manipulado y transformación de vidrio plano.
               </HomeDetailElementText>
+              <LinkDiv>
+                <Link className="link" to={'/trabajos'}>
+                  Instalaciones comerciales{' '}
+                  <FontAwesomeIcon icon={faLongArrowAltRight} />
+                </Link>
+              </LinkDiv>
             </HomeDetailElementTextDiv>
-          </HomeDetailElement>
+          </HomeDetailElementRight>
           <HomeSystemGlassDiv>
             <img src="./img/systemglass-fondo.png" alt="systemglass-fondo" />
           </HomeSystemGlassDiv>
         </HomeDetail>
-      </div>
+      </HomePage>
     );
   }
 }
