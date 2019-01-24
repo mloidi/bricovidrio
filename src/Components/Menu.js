@@ -116,7 +116,10 @@ class Menu extends Component {
         <MenuStyle>
           <Logo>
             <Link to={'/'}>
-              <img src="./img/logo.gif" alt="logo" />
+              <img
+                src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/logo.jpg"
+                alt="logo"
+              />
             </Link>
           </Logo>
           <DataMenu>
@@ -126,25 +129,12 @@ class Menu extends Component {
               <DataMenuText>948 16 37 81</DataMenuText>
             </DataMenuTop>
             <DataMenuBottom>
-              <DataMenuText>
-                  VIDRIO 
-                  </DataMenuText>
-                  - 
-                  <DataMenuText>
-                  Cristaleria
-                  </DataMenuText>-
-                  <DataMenuText>
-                  Fusing
-                  </DataMenuText>-
-                  <DataMenuText>
-                  Vinilos
-                  </DataMenuText>-
-                  <DataMenuText>
-                  Laminados
-                  </DataMenuText>-
-                  <DataMenuText>
-                  Decoracion
-                  </DataMenuText>
+              <DataMenuText>VIDRIO</DataMenuText>-
+              <DataMenuText>Cristaleria</DataMenuText>-
+              <DataMenuText>Fusing</DataMenuText>-
+              <DataMenuText>Vinilos</DataMenuText>-
+              <DataMenuText>Laminados</DataMenuText>-
+              <DataMenuText>Decoracion</DataMenuText>
             </DataMenuBottom>
           </DataMenu>
           <BarMenu>

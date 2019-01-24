@@ -79,7 +79,7 @@ export const HomeDetailElementImg = styled.div`
 
 export const HomeSystemGlassDiv = styled.div`
   background-color: white;
-  margin: 1rem 4rem 0 4rem;
+  margin: 2rem 4rem 0 4rem;
   grid-column-start: 1;
   grid-column-end: 3;
   display: flex;
@@ -130,25 +130,25 @@ class Home extends Component {
             )}
             cellAlign="center"
             cellSpacing={10}
-            slidesToShow={2}
             wrapAround={true}
             autoplay={true}
             autoplayInterval={2000}
+            slideWidth={0.7}
           >
-            <img src="./img/h-bricovidrio-01.png" alt="image1" />
-            <img src="./img/h-bricovidrio-02.png" alt="image2" />
-            <img src="./img/h-bricovidrio-03.png" alt="image3" />
-            <img src="./img/h-bricovidrio-04.png" alt="image4" />
-            <img src="./img/h-bricovidrio-05.png" alt="image5" />
-            <img src="./img/h-bricovidrio-06.png" alt="image6" />
-            <img src="./img/h-bricovidrio-07.png" alt="image7" />
+            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362088/Bricovidrio/h-bricovidrio-01.jpg" alt="image1" />
+            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-02.jpg" alt="image2" />
+            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-03.jpg" alt="image3" />
+            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-04.jpg" alt="image4" />
+            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-05.jpg" alt="image5" />
+            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-06.jpg" alt="image6" />
+            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-07.jpg" alt="image7" />
           </Carousel>
         </CarouselDiv>
         <HomeDetail>
           <HomeDetailElementLeft>
             <HomeDetailElementImg>
               <img
-                src="./img/d-decoracion-vidrio.png"
+                src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/d-decoracion-vidrio.jpg"
                 alt="d-decoracion-vidrio"
               />
             </HomeDetailElementImg>
@@ -175,7 +175,7 @@ class Home extends Component {
           </HomeDetailElementLeft>
           <HomeDetailElementRight>
             <HomeDetailElementImg>
-              <img src="./img/d-vinilos.png" alt="d-vinilos" />
+              <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/d-vinilos.jpg" alt="d-vinilos" />
             </HomeDetailElementImg>
             <HomeDetailElementTextDiv>
               <HomeDetailElementTitle>
@@ -199,7 +199,7 @@ class Home extends Component {
             </HomeDetailElementTextDiv>
           </HomeDetailElementRight>
           <HomeSystemGlassDiv>
-            <img src="./img/systemglass-fondo.png" alt="systemglass-fondo" />
+            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/systemglass-fondo.jpg" alt="systemglass-fondo" />
           </HomeSystemGlassDiv>
         </HomeDetail>
       </HomePage>

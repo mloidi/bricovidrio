@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink as Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright, faPhone, faFax } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +13,17 @@ export const FooterStyle = styled.div`
   font-size: 0.8rem;
   color: lightgrey;
   padding: 0.1rem 15% 0.1rem 15%;
+  .link {
+    color: lightgrey;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      outline: none;
+      &:after {
+        width: calc(100% - 60px);
+      }
+    }
+  }
 `;
 
 export const FooterDataLeft = styled.div`
@@ -74,7 +86,9 @@ class Footer extends Component {
                 S.L.
               </FooterDataLeftContentTop>
               <FooterDataLeftContentBottom>
-                Accesibilidad | Aviso Legal
+                <Link className="link" to={'/legal'}>
+                  Aviso Legal
+                </Link>
               </FooterDataLeftContentBottom>
             </FooterDataLeftContent>
           </FooterDataLeft>

@@ -10,6 +10,7 @@ import Location from './Components/Location';
 import Contact from './Components/Contact';
 import NotFound from './Components/NotFound';
 import Footer from './Components/Footer';
+import Legal from './Components/Legal';
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
               <Route exact path="/trabajos" component={Projects} />
               <Route exact path="/ubicacion" component={Location} />
               <Route exact path="/contacto" component={Contact} />
+              <Route exact path="/legal" component={Legal} />
               <Route component={NotFound} />
             </Switch>
           </div>
