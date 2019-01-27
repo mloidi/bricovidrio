@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Menu from './Components/Menu';
-import Home from './Components/Home';
-import About from './Components/About';
-import Products from './Components/Products';
-import Projects from './Components/Projects';
-import Location from './Components/Location';
-import Contact from './Components/Contact';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Products from './Pages/Products';
+import Projects from './Pages/Projects';
+import Location from './Pages/Location';
+import Contact from './Pages/Contact';
 import NotFound from './Components/NotFound';
 import Footer from './Components/Footer';
-import Legal from './Components/Legal';
+import Legal from './Pages/Legal';
 
 class App extends Component {
   render() {
@@ -24,6 +24,7 @@ class App extends Component {
               <Route exact path="/nosotros" component={About} />
               <Route exact path="/productos" component={Products} />
               <Route exact path="/trabajos" component={Projects} />
+              <Route exact path="/trabajos/:id" component={Projects} />
               <Route exact path="/ubicacion" component={Location} />
               <Route exact path="/contacto" component={Contact} />
               <Route exact path="/legal" component={Legal} />

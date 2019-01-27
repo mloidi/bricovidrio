@@ -53,7 +53,7 @@ export const FooterDataCenter = styled.div`
   padding: 0.5rem 1rem 0.5rem 1rem;
 `;
 
-export const FooterDataRight = styled.p`
+export const FooterDataRight = styled.div`
   margin: 0 1rem 0 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-left: 0.1rem white solid;

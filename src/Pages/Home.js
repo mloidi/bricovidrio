@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Carousel from 'nuka-carousel';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAngleDoubleRight,

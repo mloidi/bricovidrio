@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink as Link } from 'react-router-dom';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-
 import styled from 'styled-components';
+
+import { DataService } from '../Service/data.service';
 
 export const MenuStyle = styled.div`
   background-color: white;
@@ -110,6 +110,19 @@ export const NavStyles = styled.ul`
 `;
 
 class Menu extends Component {
+  state = {
+    menuOptions: {},
+    dataMenuTop: {},
+    dataMenuBottom: {}
+  };
+
+  componentDidMount() {
+    this.setState({
+      menuOptions: DataService.getMenuOptions(),
+      dataMenuTop: DataService.getDataMenuTop(),
+      dataMenuBottom: DataService.getDataMenuBottom()
+    });
+  }
   render() {
     return (
       <header>
@@ -124,51 +137,38 @@ class Menu extends Component {
           </Logo>
           <DataMenu>
             <DataMenuTop>
-              <DataMenuText>Cristaleria Pamplona</DataMenuText>
-              <FontAwesomeIcon icon={faPhone} />
-              <DataMenuText>948 16 37 81</DataMenuText>
+              {Object.keys(this.state.dataMenuTop).map(key => (
+                <div key={key}>
+                  <DataMenuText>
+                    {this.state.dataMenuTop[key].description}
+                  </DataMenuText>
+                  <FontAwesomeIcon icon={faPhone} />
+                  <DataMenuText>
+                    {this.state.dataMenuTop[key].phone}
+                  </DataMenuText>
+                </div>
+              ))}
             </DataMenuTop>
             <DataMenuBottom>
-              <DataMenuText>VIDRIO</DataMenuText>-
-              <DataMenuText>Cristaleria</DataMenuText>-
-              <DataMenuText>Fusing</DataMenuText>-
-              <DataMenuText>Vinilos</DataMenuText>-
-              <DataMenuText>Laminados</DataMenuText>-
-              <DataMenuText>Decoracion</DataMenuText>
+              {Object.keys(this.state.dataMenuBottom).map(key => (
+                <div key={key}>
+                  <DataMenuText>
+                    {this.state.dataMenuBottom[key].description}
+                  </DataMenuText>
+                  {this.state.dataMenuBottom[key].separator}
+                </div>
+              ))}
             </DataMenuBottom>
           </DataMenu>
           <BarMenu>
             <NavStyles>
-              <li>
-                <Link className="link" to={'/'}>
-                  Inicio
-                </Link>
-              </li>
-              <li>
-                <Link className="link" to={'/nosotros'}>
-                  Cristaleria Bricovidrio
-                </Link>
-              </li>
-              <li>
-                <Link className="link" to={'/productos'}>
-                  Productos
-                </Link>
-              </li>
-              <li>
-                <Link className="link" to={'/trabajos'}>
-                  Trabajos realizados
-                </Link>
-              </li>
-              <li>
-                <Link className="link" to={'/ubicacion'}>
-                  Ubicacion
-                </Link>
-              </li>
-              <li>
-                <Link className="link" to={'/contacto'}>
-                  Contacto
-                </Link>
-              </li>
+              {Object.keys(this.state.menuOptions).map(key => (
+                <li key={key}>
+                  <Link className="link" to={this.state.menuOptions[key].to}>
+                    {this.state.menuOptions[key].description}
+                  </Link>
+                </li>
+              ))}
             </NavStyles>
           </BarMenu>
         </MenuStyle>
