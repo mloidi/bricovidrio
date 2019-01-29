@@ -278,7 +278,16 @@ const projects = [
   {
     description: 'Cristalería en general',
     slug: 'cristaleria-general',
-    projects: [],
+    projects: [
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548589354/Bricovidrio/20110719105819-1.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548589354/Bricovidrio/20110719105738-1.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548589355/Bricovidrio/20130215225231-1.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548589354/Bricovidrio/20120329144217-1.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548589354/Bricovidrio/20110719105600-1.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548589355/Bricovidrio/20121207232754-1.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548589355/Bricovidrio/20120116144654-1.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548589355/Bricovidrio/20130215224627-1.jpg'
+    ],
     link: {
       to: '/trabajos/cristaleria-general'
     }
@@ -286,7 +295,15 @@ const projects = [
   {
     description: 'Cortinas de cristal',
     slug: 'cortinas-cristal',
-    projects: [],
+    projects: [
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590359/Bricovidrio/20120329142134-14.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590359/Bricovidrio/20120203133715-14.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590359/Bricovidrio/20120329142609-14.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590359/Bricovidrio/20120329143728-14.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590359/Bricovidrio/20110719103132-14.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590359/Bricovidrio/20120116144524-14.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590358/Bricovidrio/20110719103020-14.jpg'
+    ],
     link: {
       to: '/trabajos/cortinas-cristal'
     }
@@ -294,7 +311,21 @@ const projects = [
   {
     description: 'Instalaciones comerciales',
     slug: 'instalaciones-comerciales',
-    projects: [],
+    projects: [
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590584/Bricovidrio/20121207234650-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590584/Bricovidrio/20110719105430-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590584/Bricovidrio/20110701120138-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590584/Bricovidrio/20111213121752-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590584/Bricovidrio/20110701120122-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590584/Bricovidrio/20110701120129-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590584/Bricovidrio/20110701120115-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590583/Bricovidrio/20110701120040-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590583/Bricovidrio/20110701120012-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590583/Bricovidrio/20110701120108-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590583/Bricovidrio/20110701120033-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590583/Bricovidrio/20110701120047-2.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590583/Bricovidrio/20110701115957-2.jpg'
+    ],
     link: {
       to: '/trabajos/instalaciones-comerciales'
     }
@@ -397,5 +428,11 @@ export const DataService = {
   },
   getProjects: () => {
     return projects;
+  },
+  getProject: slug => {
+    const filterProject = projects.find((value, index, arrsy) => {
+      return value.slug === slug;
+    });
+    return filterProject;
   }
 };

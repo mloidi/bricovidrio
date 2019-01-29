@@ -26,7 +26,6 @@ export const SubMenu = styled.ul`
 export const SubMenuElement = styled.li`
   background-color: #1352b1;
   border: 0;
-  /* padding: 1rem; */
   margin: 0 0 0.1rem 0;
   color: white;
   display: flex;
@@ -71,11 +70,28 @@ export const SubMenuElementSelected = styled.li`
   }
 `;
 
+export const ProjectsDetailDiv = styled.div`
+  background-color: white;
+  padding: 0 1rem 1rem 1rem;
+  font-size: 1rem;
+`;
+
+export const ProjectsDetailTitle = styled.div`
+  color: #1352b1;
+  font-size: 2rem;
+  margin: 1rem 0 0.5rem 0;
+`;
+
+export const ProjectsDetailImg = styled.img`
+  margin: 0.5rem;
+`;
+
 class Projects extends Component {
   state = {
     projects: {},
     pageMainInfo: {},
-    id: ''
+    id: '',
+    selectedProject: {}
   };
 
   componentDidMount() {
@@ -84,7 +100,12 @@ class Projects extends Component {
       pageMainInfo: DataService.getPageMainInfo(3),
       id: this.props.match.params.id
         ? this.props.match.params.id
-        : DataService.getProjects()[0].slug
+        : DataService.getProjects()[0].slug,
+      selectedProject: DataService.getProject(
+        this.props.match.params.id
+          ? this.props.match.params.id
+          : DataService.getProjects()[0].slug
+      )
     });
   }
   render() {
@@ -106,7 +127,10 @@ class Projects extends Component {
                   <SubMenuElement
                     onClick={() => {
                       this.setState({
-                        id: this.state.projects[key].slug
+                        id: this.state.projects[key].slug,
+                        selectedProject: DataService.getProject(
+                          this.state.projects[key].slug
+                        )
                       });
                       this.props.history.push(this.state.projects[key].link.to);
                     }}
@@ -119,6 +143,19 @@ class Projects extends Component {
               </React.Fragment>
             ))}
           </SubMenu>
+          <ProjectsDetailDiv>
+            <ProjectsDetailTitle>
+              {this.state.selectedProject.description}
+            </ProjectsDetailTitle>
+            {this.state.selectedProject.projects &&
+              Object.keys(this.state.selectedProject.projects).map(key => (
+                <ProjectsDetailImg
+                  key={key}
+                  src={this.state.selectedProject.projects[key]}
+                  alt={this.state.selectedProject.projects[key]}
+                />
+              ))}
+          </ProjectsDetailDiv>
         </ProjectsDiv>
       </React.Fragment>
     );
