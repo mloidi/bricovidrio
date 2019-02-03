@@ -37,14 +37,16 @@ export const DataMenu = styled.div`
   margin: 0 1rem 0 1rem;
 `;
 
-export const DataMenuTop = styled.p`
+export const DataMenuTop = styled.div`
+  margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 700;
   display: flex;
   justify-content: flex-end;
 `;
 
-export const DataMenuBottom = styled.p`
+export const DataMenuBottom = styled.div`
+  margin-top: 1rem;
   font-size: 0.8rem;
   display: flex;
   justify-content: flex-end;

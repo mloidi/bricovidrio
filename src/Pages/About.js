@@ -1,21 +1,9 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
 
 import { DataService } from '../Service/data.service';
 import Item from '../Components/Item';
 import PageMainInfo from '../Components/PageMainInfo';
-
-export const AboutMainDiv = styled.div`
-  background-color: white;
-  padding: 1rem 2rem 1rem 2rem;
-  display: flex;
-  justify-content: center;
-`;
-
-export const AboutImg = styled.img`
-  margin: 0.5rem 0.2rem 0.5rem 0.5rem;
-`;
 
 class About extends Component {
   state = {
