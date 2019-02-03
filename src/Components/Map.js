@@ -15,7 +15,7 @@ var map = {},
     'https://www.bing.com/api/maps/mapcontrol?key=AoaJ1oNGA7XxMDUUO2H7uBv9mX2rlUEF_IWP5UHWVOBpsM1tOshGpOEDcIVv9-7n&callback=bingmapsCallback',
   pendingProps = [];
 
-class ReactBingmaps extends Component {
+class Map extends Component {
   componentDidMount() {
     if (document.querySelector('script[src="' + scriptURL + '"]') === null) {
       this.loadScript(scriptURL);
@@ -860,9 +860,9 @@ class ReactBingmaps extends Component {
   }
 }
 
-export default ReactBingmaps;
+export default Map;
 
-ReactBingmaps.propTypes = {
+Map.propTypes = {
   center: PropTypes.arrayOf(PropTypes.number),
   mapTypeId: PropTypes.string,
   navigationBarMode: PropTypes.string,
@@ -932,7 +932,7 @@ ReactBingmaps.propTypes = {
   directions: PropTypes.object,
   mapHandlers: PropTypes.arrayOf(PropTypes.object)
 };
-ReactBingmaps.defaultProps = {
+Map.defaultProps = {
   center: undefined,
   mapTypeId: undefined,
   navigationBarMode: undefined,

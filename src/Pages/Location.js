@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 
-import ReactBingmaps from '../Components/Map/ReactBingmaps';
+import Map from '../Components/Map';
 
 class Location extends Component {
   render() {
@@ -11,7 +11,7 @@ class Location extends Component {
           <title>Ubicacion | Cristaleria Bricovidrio</title>
         </Helmet>
         <p>Ubicacion - Cristaleria Bricovidrio</p>
-        <ReactBingmaps
+        <Map
           center={[ 42.8168700, -1.6432300]}
           id="tienda"
           infoboxes = {
