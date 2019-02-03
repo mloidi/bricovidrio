@@ -6,7 +6,7 @@ import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 
 import styled from 'styled-components';
 
-export const ProductDiv = styled.div`
+const ProductDiv = styled.div`
   background-color: white;
   margin: 2rem 4rem 2rem 4rem;
   padding: 1rem 1rem 1rem 1rem;
@@ -16,23 +16,23 @@ export const ProductDiv = styled.div`
   justify-content: left;
 `;
 
-export const ProductImg = styled.img`
+const ProductImg = styled.img`
   margin: 0.5rem 0.2rem 0.5rem 0.5rem;
 `;
 
-export const ProductTitle = styled.div`
+const ProductTitle = styled.div`
   color: #1352b1;
   text-transform: uppercase;
   margin: 0.5rem 0.2rem 0 0.5rem;
 `;
 
-export const ProductText = styled.div`
+const ProductText = styled.div`
   margin: 0.5rem 0.2rem 1rem 0.5rem;
   font-size: 0.9rem;
   color: grey;
 `;
 
-export const LinkDiv = styled.div`
+const LinkDiv = styled.div`
   background-color: #1352b1;
   padding: 0.5rem;
   margin: 0.2rem 0.2rem 0 0.5rem;

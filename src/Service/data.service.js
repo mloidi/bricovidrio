@@ -72,9 +72,10 @@ const pageMainInfo = [
   {
     id: 4,
     description: 'donde estamos',
-    title: null,
-    img: null,
-    alt: null
+    title: 'Donde estamos | Cristaleria Bricovidrio',
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/v1549206412/Bricovidrio/c-ubicacion.png',
+    alt: 'c-ubicacion'
   },
   {
     id: 5,
@@ -333,7 +334,11 @@ const projects = [
   {
     description: 'Vidrios decorados',
     slug: 'vidrio-decorado',
-    projects: [],
+    projects: [
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208549/Bricovidrio/20120203141916-3.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208549/Bricovidrio/20120203140433-3.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208548/Bricovidrio/20120203134304-3.jpg'
+    ],
     link: {
       to: '/trabajos/vidrio-decorado'
     }
@@ -341,7 +346,9 @@ const projects = [
   {
     description: 'Vidrieras',
     slug: 'vidrieras',
-    projects: [],
+    projects: [
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208659/Bricovidrio/20110701120804-4.jpg'
+    ],
     link: {
       to: '/trabajos/vidrieras'
     }
@@ -349,7 +356,10 @@ const projects = [
   {
     description: 'Biselados',
     slug: 'biselados',
-    projects: [],
+    projects: [
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208736/Bricovidrio/20110712103255-5.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208735/Bricovidrio/20110712103245-5.jpg'
+    ],
     link: {
       to: '/trabajos/biselados'
     }
@@ -357,7 +367,11 @@ const projects = [
   {
     description: 'Espejos',
     slug: 'espejos',
-    projects: [],
+    projects: [
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208809/Bricovidrio/20110719105309-6.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208809/Bricovidrio/20110719105211-6.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208809/Bricovidrio/20110701120959-6.jpg'
+    ],
     link: {
       to: '/trabajos/espejos'
     }
@@ -365,7 +379,12 @@ const projects = [
   {
     description: 'Fusing',
     slug: 'fusing',
-    projects: [],
+    projects: [
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208880/Bricovidrio/20110718102122-7.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208880/Bricovidrio/20110718102115-7.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208879/Bricovidrio/20110718102104-7.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208879/Bricovidrio/20110718102048-7.jpg'
+    ],
     link: {
       to: '/trabajos/fusing'
     }
@@ -381,7 +400,10 @@ const projects = [
   {
     description: 'Encimeras de seno integrado',
     slug: 'encimeras-seno-integrado',
-    projects: [],
+    projects: [
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209061/Bricovidrio/20110712101439-10.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209061/Bricovidrio/20110712101429-10.jpg'
+    ],
     link: {
       to: '/trabajos/encimeras-seno-integrado'
     }
@@ -389,7 +411,15 @@ const projects = [
   {
     description: 'Decoración en vinilo',
     slug: 'vinilos-decorativos',
-    projects: [],
+    projects: [
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209182/Bricovidrio/20110712092345-11.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209181/Bricovidrio/20110719110002-11.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209181/Bricovidrio/20110719113905-11.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209181/Bricovidrio/20110712090838-11.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209181/Bricovidrio/20110719105953-11.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209181/Bricovidrio/20110718102757-11.jpg',
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209181/Bricovidrio/20110718102737-11.jpg'
+    ],
     link: {
       to: '/trabajos/vinilos-decorativos'
     }

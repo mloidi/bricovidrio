@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 
 import styled from 'styled-components';
 
-export const LegalDiv = styled.div`
+const LegalDiv = styled.div`
   background-color: white;
   margin: 1rem 2rem 1rem 2rem;
   padding: 1rem 2rem 1rem 2rem;
   font-size: 1rem;
 `;
 
-export const LegalTitle = styled.div`
+const LegalTitle = styled.div`
   color: #1352b1;
   text-transform: uppercase;
   margin: 1rem 0.2rem 0 0.5rem;
 `;
 
-export const LegalText = styled.div`
+const LegalText = styled.div`
   margin: 0.5rem 0.2rem 1rem 0.5rem;
   font-size: 0.9rem;
   color: grey;

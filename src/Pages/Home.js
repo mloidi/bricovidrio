@@ -11,16 +11,16 @@ import {
 
 import styled from 'styled-components';
 
-export const HomePage = styled.div`
+const HomePage = styled.div`
   width: 100%;
 `;
 
-export const CarouselDiv = styled.div`
+const CarouselDiv = styled.div`
   background-color: white;
   padding: 1rem 2rem 1rem 2rem;
 `;
 
-export const CarouselButton = styled.button`
+const CarouselButton = styled.button`
   font-size: 1.5rem;
   border: 0px;
   background-color: rgba(0, 0, 0, 0.4);
@@ -30,13 +30,13 @@ export const CarouselButton = styled.button`
   cursor: pointer;
 `;
 
-export const HomeDetail = styled.div`
+const HomeDetail = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   margin: 2rem 0 1rem 0;
 `;
 
-export const HomeDetailElementLeft = styled.div`
+const HomeDetailElementLeft = styled.div`
   background-color: white;
   margin: 0 1rem 0 4rem;
   padding: 0 2rem 0 2rem;
@@ -44,7 +44,7 @@ export const HomeDetailElementLeft = styled.div`
   grid-template-columns: auto auto;
 `;
 
-export const HomeDetailElementRight = styled.div`
+const HomeDetailElementRight = styled.div`
   background-color: white;
   margin: 0 4rem 0 1rem;
   padding: 0 2rem 0 2rem;
@@ -52,31 +52,31 @@ export const HomeDetailElementRight = styled.div`
   grid-template-columns: auto auto;
 `;
 
-export const HomeDetailElementTextDiv = styled.div`
+const HomeDetailElementTextDiv = styled.div`
   font-size: 1rem;
 `;
 
-export const HomeDetailElementTitle = styled.div`
+const HomeDetailElementTitle = styled.div`
   color: #1352b1;
   text-transform: uppercase;
   margin: 1rem 0.2rem 0 0.5rem;
 `;
 
-export const HomeDetailElementSubTitle = styled.div`
+const HomeDetailElementSubTitle = styled.div`
   margin: 0.2rem 0.2rem 0 0.5rem;
 `;
 
-export const HomeDetailElementText = styled.div`
+const HomeDetailElementText = styled.div`
   margin: 0.5rem 0.2rem 1rem 0.5rem;
   font-size: 0.9rem;
   color: grey;
 `;
 
-export const HomeDetailElementImg = styled.div`
+const HomeDetailElementImg = styled.div`
   margin: 1rem 0 1rem 0;
 `;
 
-export const HomeSystemGlassDiv = styled.div`
+const HomeSystemGlassDiv = styled.div`
   background-color: white;
   margin: 2rem 4rem 0 4rem;
   grid-column-start: 1;
@@ -85,7 +85,7 @@ export const HomeSystemGlassDiv = styled.div`
   justify-content: center;
 `;
 
-export const LinkDiv = styled.div`
+const LinkDiv = styled.div`
   background-color: #1352b1;
   padding: 0.5rem;
   margin: 0.2rem 0.2rem 0 0.5rem;
@@ -108,7 +108,7 @@ export const LinkDiv = styled.div`
   }
 `;
 
-class Home extends Component {
+export default class Home extends Component {
   render() {
     return (
       <HomePage>
@@ -134,13 +134,34 @@ class Home extends Component {
             autoplayInterval={2000}
             slideWidth={0.7}
           >
-            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362088/Bricovidrio/h-bricovidrio-01.jpg" alt="image1" />
-            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-02.jpg" alt="image2" />
-            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-03.jpg" alt="image3" />
-            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-04.jpg" alt="image4" />
-            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-05.jpg" alt="image5" />
-            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-06.jpg" alt="image6" />
-            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-07.jpg" alt="image7" />
+            <img
+              src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362088/Bricovidrio/h-bricovidrio-01.jpg"
+              alt="image1"
+            />
+            <img
+              src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-02.jpg"
+              alt="image2"
+            />
+            <img
+              src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-03.jpg"
+              alt="image3"
+            />
+            <img
+              src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-04.jpg"
+              alt="image4"
+            />
+            <img
+              src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-05.jpg"
+              alt="image5"
+            />
+            <img
+              src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-06.jpg"
+              alt="image6"
+            />
+            <img
+              src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/h-bricovidrio-07.jpg"
+              alt="image7"
+            />
           </Carousel>
         </CarouselDiv>
         <HomeDetail>
@@ -174,7 +195,10 @@ class Home extends Component {
           </HomeDetailElementLeft>
           <HomeDetailElementRight>
             <HomeDetailElementImg>
-              <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/d-vinilos.jpg" alt="d-vinilos" />
+              <img
+                src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/d-vinilos.jpg"
+                alt="d-vinilos"
+              />
             </HomeDetailElementImg>
             <HomeDetailElementTextDiv>
               <HomeDetailElementTitle>
@@ -198,12 +222,13 @@ class Home extends Component {
             </HomeDetailElementTextDiv>
           </HomeDetailElementRight>
           <HomeSystemGlassDiv>
-            <img src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/systemglass-fondo.jpg" alt="systemglass-fondo" />
+            <img
+              src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362089/Bricovidrio/systemglass-fondo.jpg"
+              alt="systemglass-fondo"
+            />
           </HomeSystemGlassDiv>
         </HomeDetail>
       </HomePage>
     );
   }
 }
-
-export default Home;

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import ReactDOMServer from 'react-dom/server';
 import styled from 'styled-components';
 
-export const MapDiv = styled.div`
+const MapDiv = styled.div`
   width: 600px !important;
-	height: 400px !important;
+  height: 400px !important;
 `;
 
 var map = {},
@@ -15,15 +15,19 @@ var map = {},
     'https://www.bing.com/api/maps/mapcontrol?key=AoaJ1oNGA7XxMDUUO2H7uBv9mX2rlUEF_IWP5UHWVOBpsM1tOshGpOEDcIVv9-7n&callback=bingmapsCallback',
   pendingProps = [];
 
-class Map extends Component {
+export default class Map extends Component {
   componentDidMount() {
     if (document.querySelector('script[src="' + scriptURL + '"]') === null) {
       this.loadScript(scriptURL);
       window.bingmapsCallback = function() {
         Microsoft = window.Microsoft;
         this.afterDependencyLoad(pendingProps);
-        this.reactBingmaps(this.props, Microsoft);
       }.bind(this);
+    }
+    if (Microsoft === null || Microsoft === undefined) {
+      pendingProps.push(this.props);
+    } else {
+      this.reactBingmaps(this.props, Microsoft);
     }
   }
   afterDependencyLoad(pendingProps) {
@@ -121,15 +125,15 @@ class Map extends Component {
       infoboxes,
       infoboxesWithPushPins,
       getLocation,
-      regularPolygons,
+      // regularPolygons,
       boundary,
       mapOptions,
-      polyline,
+      // polyline,
       directions,
       mapHandlers
     } = props;
     if (Microsoft) {
-        let mapReference = props.id ? '#' + props.id : '.react-bingmaps';
+      let mapReference = props.id ? '#' + props.id : '.react-bingmaps';
       if (!map[mapReference]) {
         map[mapReference] = new Microsoft.Maps.Map(mapReference, {});
       }
@@ -147,10 +151,10 @@ class Map extends Component {
         mapReference
       );
       this.setGetLocation(getLocation, mapReference);
-      this.createRegularPolygons(regularPolygons, mapReference);
+      // this.createRegularPolygons(regularPolygons, mapReference);
       this.setBoundary(boundary, mapReference);
       this.setMapOptions(mapOptions, mapReference);
-      this.setPolyline(polyline, mapReference);
+      // this.setPolyline(polyline, mapReference);
       this.setDirections(directions, mapReference);
       this.setMapHandlers(mapHandlers, mapReference);
     }
@@ -516,52 +520,52 @@ class Map extends Component {
   MakeCallback(callback, data, mapReference) {
     data ? callback(data) : callback();
   }
-  createRegularPolygons(regularPolygons, mapReference) {
-    if (map[mapReference] && regularPolygons) {
-      for (var i = map[mapReference].entities.getLength() - 1; i >= 0; i--) {
-        var regularPolygon = map[mapReference].entities.get(i);
-        if (regularPolygon instanceof Microsoft.Maps.Polygon) {
-          map[mapReference].entities.removeAt(i);
-        }
-      }
-      for (
-        let regularPolygonIndex = 0;
-        regularPolygonIndex < regularPolygons.length;
-        regularPolygonIndex++
-      ) {
-        if (
-          regularPolygons[regularPolygonIndex].center &&
-          regularPolygons[regularPolygonIndex].center[0] &&
-          regularPolygons[regularPolygonIndex].center[1]
-        ) {
-          let location = new Microsoft.Maps.Location(
-            regularPolygons[regularPolygonIndex].center[0],
-            regularPolygons[regularPolygonIndex].center[1]
-          );
-          let radius = regularPolygons[regularPolygonIndex].radius
-            ? regularPolygons[regularPolygonIndex].radius
-            : 0;
-          let points = regularPolygons[regularPolygonIndex].points
-            ? regularPolygons[regularPolygonIndex].points
-            : 0;
-          let option = regularPolygons[regularPolygonIndex].option
-            ? regularPolygons[regularPolygonIndex].option
-            : {};
+  // createRegularPolygons(regularPolygons, mapReference) {
+  //   if (map[mapReference] && regularPolygons) {
+  //     for (var i = map[mapReference].entities.getLength() - 1; i >= 0; i--) {
+  //       var regularPolygon = map[mapReference].entities.get(i);
+  //       if (regularPolygon instanceof Microsoft.Maps.Polygon) {
+  //         map[mapReference].entities.removeAt(i);
+  //       }
+  //     }
+  //     for (
+  //       let regularPolygonIndex = 0;
+  //       regularPolygonIndex < regularPolygons.length;
+  //       regularPolygonIndex++
+  //     ) {
+  //       if (
+  //         regularPolygons[regularPolygonIndex].center &&
+  //         regularPolygons[regularPolygonIndex].center[0] &&
+  //         regularPolygons[regularPolygonIndex].center[1]
+  //       ) {
+  //         let location = new Microsoft.Maps.Location(
+  //           regularPolygons[regularPolygonIndex].center[0],
+  //           regularPolygons[regularPolygonIndex].center[1]
+  //         );
+  //         let radius = regularPolygons[regularPolygonIndex].radius
+  //           ? regularPolygons[regularPolygonIndex].radius
+  //           : 0;
+  //         let points = regularPolygons[regularPolygonIndex].points
+  //           ? regularPolygons[regularPolygonIndex].points
+  //           : 0;
+  //         let option = regularPolygons[regularPolygonIndex].option
+  //           ? regularPolygons[regularPolygonIndex].option
+  //           : {};
 
-          Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
-            var locations = Microsoft.Maps.SpatialMath.getRegularPolygon(
-              location,
-              radius,
-              points,
-              Microsoft.Maps.SpatialMath.DistanceUnits.Miles
-            );
-            var polygon = new Microsoft.Maps.Polygon(locations, option);
-            map[mapReference].entities.push(polygon);
-          });
-        }
-      }
-    }
-  }
+  //         Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
+  //           var locations = Microsoft.Maps.SpatialMath.getRegularPolygon(
+  //             location,
+  //             radius,
+  //             points,
+  //             Microsoft.Maps.SpatialMath.DistanceUnits.Miles
+  //           );
+  //           var polygon = new Microsoft.Maps.Polygon(locations, option);
+  //           map[mapReference].entities.push(polygon);
+  //         });
+  //       }
+  //     }
+  //   }
+  // }
   setBoundary(boundary, mapReference) {
     if (map[mapReference] && boundary) {
       for (var i = map[mapReference].entities.getLength() - 1; i >= 0; i--) {
@@ -656,43 +660,43 @@ class Map extends Component {
       map[mapReference].setOptions(mapOptions);
     }
   }
-  setPolyline(polyline, mapReference) {
-    if (map[mapReference] && polyline) {
-      for (var i = map[mapReference].entities.getLength() - 1; i >= 0; i--) {
-        var ref = map[mapReference].entities.get(i);
-        if (ref instanceof Microsoft.Maps.Polyline) {
-          map[mapReference].entities.removeAt(i);
-        }
-      }
+  // setPolyline(polyline, mapReference) {
+  //   if (map[mapReference] && polyline) {
+  //     for (var i = map[mapReference].entities.getLength() - 1; i >= 0; i--) {
+  //       var ref = map[mapReference].entities.get(i);
+  //       if (ref instanceof Microsoft.Maps.Polyline) {
+  //         map[mapReference].entities.removeAt(i);
+  //       }
+  //     }
 
-      var polylineLocations = polyline.location ? polyline.location : null;
-      var polylineOption = polyline.option ? polyline.option : null;
+  //     var polylineLocations = polyline.location ? polyline.location : null;
+  //     var polylineOption = polyline.option ? polyline.option : null;
 
-      var polylineLocationsAsMapLocations = [];
-      for (
-        var polylineLocationIndex = 0;
-        polylineLocationIndex < polylineLocations.length &&
-        polylineLocations[polylineLocationIndex][0] &&
-        polylineLocations[polylineLocationIndex][1];
-        polylineLocationIndex++
-      ) {
-        polylineLocationsAsMapLocations.push(
-          new Microsoft.Maps.Location(
-            polylineLocations[polylineLocationIndex][0],
-            polylineLocations[polylineLocationIndex][1]
-          )
-        );
-      }
+  //     var polylineLocationsAsMapLocations = [];
+  //     for (
+  //       var polylineLocationIndex = 0;
+  //       polylineLocationIndex < polylineLocations.length &&
+  //       polylineLocations[polylineLocationIndex][0] &&
+  //       polylineLocations[polylineLocationIndex][1];
+  //       polylineLocationIndex++
+  //     ) {
+  //       polylineLocationsAsMapLocations.push(
+  //         new Microsoft.Maps.Location(
+  //           polylineLocations[polylineLocationIndex][0],
+  //           polylineLocations[polylineLocationIndex][1]
+  //         )
+  //       );
+  //     }
 
-      if (polylineLocationsAsMapLocations.length !== 0) {
-        var polylineObject = new Microsoft.Maps.Polyline(
-          polylineLocationsAsMapLocations,
-          polylineOption
-        );
-        map[mapReference].entities.push(polylineObject);
-      }
-    }
-  }
+  //     if (polylineLocationsAsMapLocations.length !== 0) {
+  //       var polylineObject = new Microsoft.Maps.Polyline(
+  //         polylineLocationsAsMapLocations,
+  //         polylineOption
+  //       );
+  //       map[mapReference].entities.push(polylineObject);
+  //     }
+  //   }
+  // }
   setDirections(directions, mapReference) {
     if (map[mapReference] && directions) {
       var inputPanel = directions.inputPanel ? directions.inputPanel : null;
@@ -856,11 +860,9 @@ class Map extends Component {
     }
   }
   render() {
-    return <MapDiv id={this.props.id}/>;
+    return <MapDiv id={this.props.id} />;
   }
 }
-
-export default Map;
 
 Map.propTypes = {
   center: PropTypes.arrayOf(PropTypes.number),
@@ -907,14 +909,14 @@ Map.propTypes = {
     })
   ),
   getLocation: PropTypes.object,
-  regularPolygons: PropTypes.arrayOf(
-    PropTypes.shape({
-      center: PropTypes.arrayOf(PropTypes.number),
-      radius: PropTypes.number,
-      points: PropTypes.number,
-      option: PropTypes.object
-    })
-  ),
+  // regularPolygons: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     center: PropTypes.arrayOf(PropTypes.number),
+  //     radius: PropTypes.number,
+  //     points: PropTypes.number,
+  //     option: PropTypes.object
+  //   })
+  // ),
   boundary: PropTypes.shape({
     location: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.number),
@@ -925,10 +927,10 @@ Map.propTypes = {
     search: PropTypes.string
   }),
   mapOptions: PropTypes.object,
-  polyline: PropTypes.shape({
-    location: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
-    option: PropTypes.object
-  }),
+  // polyline: PropTypes.shape({
+  //   location: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+  //   option: PropTypes.object
+  // }),
   directions: PropTypes.object,
   mapHandlers: PropTypes.arrayOf(PropTypes.object)
 };
@@ -944,10 +946,10 @@ Map.defaultProps = {
   infoboxesWithPushPins: undefined,
   zoom: undefined,
   getLocation: undefined,
-  regularPolygons: undefined,
+  // regularPolygons: undefined,
   boundary: undefined,
   mapOptions: undefined,
-  polyline: undefined,
+  // polyline: undefined,
   directions: undefined,
   mapHandlers: undefined
 };

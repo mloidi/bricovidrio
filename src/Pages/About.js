@@ -5,7 +5,7 @@ import { DataService } from '../Service/data.service';
 import Item from '../Components/Item';
 import PageMainInfo from '../Components/PageMainInfo';
 
-class About extends Component {
+export default class About extends Component {
   state = {
     about: {},
     pageMainInfo: {}
@@ -32,5 +32,3 @@ class About extends Component {
     );
   }
 }
-
-export default About;

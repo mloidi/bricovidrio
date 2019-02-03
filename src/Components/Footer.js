@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink as Link } from 'react-router-dom';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright, faPhone, faFax } from '@fortawesome/free-solid-svg-icons';
-
 import styled from 'styled-components';
 
-export const FooterStyle = styled.div`
+const FooterStyle = styled.div`
   background-color: #1352b1;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -26,7 +24,7 @@ export const FooterStyle = styled.div`
   }
 `;
 
-export const FooterDataLeft = styled.div`
+const FooterDataLeft = styled.div`
   margin: 0 1rem 0 1rem;
   padding: 0.5rem 1rem 0.5rem 1em;
   border-right: 0.1rem white solid;
@@ -34,47 +32,47 @@ export const FooterDataLeft = styled.div`
   justify-content: flex-end;
 `;
 
-export const FooterDataLeftContent = styled.div`
+const FooterDataLeftContent = styled.div`
   display: grid;
   grid-template-columns: auto;
 `;
 
-export const FooterDataLeftContentTop = styled.div`
+const FooterDataLeftContentTop = styled.div`
   margin: 0 0 0.2rem 0;
   color: white;
 `;
 
-export const FooterDataLeftContentBottom = styled.div`
+const FooterDataLeftContentBottom = styled.div`
   margin: 0.2rem 0 0 0;
 `;
 
-export const FooterDataCenter = styled.div`
+const FooterDataCenter = styled.div`
   margin: 0 1rem 0 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
 `;
 
-export const FooterDataRight = styled.div`
+const FooterDataRight = styled.div`
   margin: 0 1rem 0 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-left: 0.1rem white solid;
 `;
 
-export const AddressContent = styled.div`
+const AddressContent = styled.div`
   display: grid;
   grid-template-columns: auto auto;
 `;
 
-export const AddressContentLeft = styled.div`
+const AddressContentLeft = styled.div`
   color: white;
   text-transform: uppercase;
 `;
 
-export const AddressContentRight = styled.div`
+const AddressContentRight = styled.div`
   display: grid;
   grid-template-columns: auto;
 `;
 
-class Footer extends Component {
+export default class Footer extends Component {
   render() {
     return (
       <footer>
@@ -123,5 +121,3 @@ class Footer extends Component {
     );
   }
 }
-
-export default Footer;

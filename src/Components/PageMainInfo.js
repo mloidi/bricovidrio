@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-export const PageMainInfoDiv = styled.div`
+const PageMainInfoDiv = styled.div`
   background-color: white;
   padding: 1rem 2rem 1rem 2rem;
   display: grid;
@@ -9,11 +9,11 @@ export const PageMainInfoDiv = styled.div`
   justify-content: center;
 `;
 
-export const PageMainInfoImg = styled.img`
+const PageMainInfoImg = styled.img`
   margin: 0.5rem 0.2rem 0.5rem 0.5rem;
 `;
 
-export const PageMainInfoTitle = styled.div`
+const PageMainInfoTitle = styled.div`
   color: #1352b1;
   text-transform: uppercase;
   font-size: 1.5rem;

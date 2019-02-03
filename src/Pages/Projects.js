@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { DataService } from '../Service/data.service';
 import PageMainInfo from '../Components/PageMainInfo';
 
-export const ProjectsDiv = styled.div`
+ const ProjectsDiv = styled.div`
   background-color: white;
   margin: 2rem 4rem 2rem 4rem;
   padding: 1rem 1rem 1rem 1rem;
@@ -16,14 +16,14 @@ export const ProjectsDiv = styled.div`
   justify-content: left;
 `;
 
-export const SubMenu = styled.ul`
+ const SubMenu = styled.ul`
   margin: 0;
   padding: 10px;
   font-size: 1.5rem;
   list-style-type: none;
 `;
 
-export const SubMenuElement = styled.li`
+ const SubMenuElement = styled.li`
   background-color: #1352b1;
   border: 0;
   margin: 0 0 0.1rem 0;
@@ -52,7 +52,7 @@ export const SubMenuElement = styled.li`
     width: 100%;
   }
 `;
-export const SubMenuElementSelected = styled.li`
+ const SubMenuElementSelected = styled.li`
   background-color: white;
   border: 0;
   padding: 1rem;
@@ -70,19 +70,19 @@ export const SubMenuElementSelected = styled.li`
   }
 `;
 
-export const ProjectsDetailDiv = styled.div`
+ const ProjectsDetailDiv = styled.div`
   background-color: white;
   padding: 0 1rem 1rem 1rem;
   font-size: 1rem;
 `;
 
-export const ProjectsDetailTitle = styled.div`
+ const ProjectsDetailTitle = styled.div`
   color: #1352b1;
   font-size: 2rem;
   margin: 1rem 0 0.5rem 0;
 `;
 
-export const ProjectsDetailImg = styled.img`
+ const ProjectsDetailImg = styled.img`
   margin: 0.5rem;
 `;
 

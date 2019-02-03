@@ -6,13 +6,13 @@ import styled from 'styled-components';
 
 import { DataService } from '../Service/data.service';
 
-export const MenuStyle = styled.div`
+const MenuStyle = styled.div`
   background-color: white;
   display: grid;
   grid-template-columns: auto auto auto;
 `;
 
-export const Logo = styled.h1`
+const Logo = styled.h1`
   font-size: 2rem;
   margin-left: 2rem;
   grid-column-start: 1;
@@ -26,18 +26,18 @@ export const Logo = styled.h1`
   }
 `;
 
-export const BarMenu = styled.div`
+const BarMenu = styled.div`
   grid-column-start: 1;
   grid-column-end: 4;
 `;
 
-export const DataMenu = styled.div`
+const DataMenu = styled.div`
   color: #1352b1;
   text-transform: uppercase;
   margin: 0 1rem 0 1rem;
 `;
 
-export const DataMenuTop = styled.div`
+const DataMenuTop = styled.div`
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 700;
@@ -45,18 +45,18 @@ export const DataMenuTop = styled.div`
   justify-content: flex-end;
 `;
 
-export const DataMenuBottom = styled.div`
+const DataMenuBottom = styled.div`
   margin-top: 1rem;
   font-size: 0.8rem;
   display: flex;
   justify-content: flex-end;
 `;
 
-export const DataMenuText = styled.span`
+const DataMenuText = styled.span`
   margin: 0 1rem 0 1rem;
 `;
 
-export const NavStyles = styled.ul`
+const NavStyles = styled.ul`
   margin: 0;
   padding: 10px;
   display: flex;
@@ -111,7 +111,7 @@ export const NavStyles = styled.ul`
   }
 `;
 
-class Menu extends Component {
+export default class Menu extends Component {
   state = {
     menuOptions: {},
     dataMenuTop: {},
@@ -178,5 +178,3 @@ class Menu extends Component {
     );
   }
 }
-
-export default Menu;
