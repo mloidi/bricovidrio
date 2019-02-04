@@ -21,11 +21,6 @@ const menuOptions = [
   },
   {
     id: 5,
-    to: '/ubicacion',
-    description: 'Ubicacion'
-  },
-  {
-    id: 6,
     to: '/contacto',
     description: 'Contacto'
   }
@@ -71,18 +66,11 @@ const pageMainInfo = [
   },
   {
     id: 4,
-    description: 'donde estamos',
-    title: 'Donde estamos | Cristaleria Bricovidrio',
+    description: 'contacta con nosotros',
+    title: 'Contacta | Cristaleria Bricovidrio',
     img:
       'https://res.cloudinary.com/mloidi/image/upload/v1549206412/Bricovidrio/c-ubicacion.png',
     alt: 'c-ubicacion'
-  },
-  {
-    id: 5,
-    description: 'contacta con nosotros',
-    title: null,
-    img: null,
-    alt: null
   }
 ];
 

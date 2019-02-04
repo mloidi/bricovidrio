@@ -6,7 +6,6 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Products from './Pages/Products';
 import Projects from './Pages/Projects';
-import Location from './Pages/Location';
 import Contact from './Pages/Contact';
 import NotFound from './Components/NotFound';
 import Footer from './Components/Footer';
@@ -25,7 +24,6 @@ class App extends Component {
               <Route exact path="/productos" component={Products} />
               <Route exact path="/trabajos" component={Projects} />
               <Route exact path="/trabajos/:id" component={Projects} />
-              <Route exact path="/ubicacion" component={Location} />
               <Route exact path="/contacto" component={Contact} />
               <Route exact path="/legal" component={Legal} />
               <Route component={NotFound} />
