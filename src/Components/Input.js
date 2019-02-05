@@ -10,7 +10,33 @@ const InputDiv = styled.div`
 
 const InputText = styled.input`
   border: none;
+  border-radius: 0.2rem;
   border-bottom: 2px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  text-align: start;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: transparent;
+  :focus {
+    outline: none;
+    transition: 0.5s;
+    border-color: #1352b1;
+    border-left: 1px solid #1352b1;
+    border-right: 1px solid #1352b1;
+    border-top: 1px solid #1352b1;
+  }
+`;
+
+const InputTextArea = styled.textarea`
+  border: none;
+  border-radius: 0.2rem;
+  border-bottom: 2px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   text-align: start;
   margin: 0 0.5rem 0.5rem 0.5rem;
   padding: 0.5rem;
@@ -27,7 +53,7 @@ const InputText = styled.input`
 `;
 
 const InputSubmit = styled.input`
-  background-color: ${props => (props.disabled ? '#1352b1' : 'lightgray')};
+  background-color: ${props => (props.disabled ? 'lightgray' : '#1352b1')};
   padding: 0.5rem;
   margin: 0.2rem 0.2rem 0 0.5rem;
   display: inline-block;
@@ -53,6 +79,12 @@ const Input = props => (
       <React.Fragment>
         <Label text={props.label} />
         <InputText {...props} />
+      </React.Fragment>
+    )}
+    {props.type === 'textarea' && (
+      <React.Fragment>
+        <Label text={props.label} />
+        <InputTextArea {...props} />
       </React.Fragment>
     )}
     {props.type === 'submit' && <InputSubmit {...props} />}

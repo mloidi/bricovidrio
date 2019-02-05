@@ -30,6 +30,22 @@ const ContactDiv = styled.div`
   /* justify-content: left; */
 `;
 
+const ContactTitle = styled.div`
+  color: #1352b1;
+  text-transform: uppercase;
+  margin: 0.5rem 0.2rem 0 0.5rem;
+`;
+
+const ContactText = styled.div`
+  margin: 0.5rem 0.2rem 0 0.5rem;
+  font-size: 0.9rem;
+  color: grey;
+`;
+
+const ContactForm = styled.form`
+  margin: 0.5rem 3rem 0.5rem 3rem;
+`;
+
 const AddressDiv = styled.div`
   margin: 0 1rem 2rem 1rem;
   display: grid;
@@ -77,19 +93,25 @@ export default class Contact extends Component {
         </Helmet>
         <PageMainInfo pageMainInfo={this.state.pageMainInfo} />
         <ContactDiv>
-          <form>
-            <Input type="text" label="Nombre" />
+          <ContactForm>
+            <ContactTitle>¿Alguna consulta o sugerencia?</ContactTitle>
+            <ContactText>
+              Para cualquier consulta o sugerencia, envíenos el siguiente
+              formulario y nos pondremos en contacto con usted lo antes posible
+              (los campos con * son obligatorios).
+            </ContactText>
+            <Input type="text" label="(*) Nombre" />
             <Input type="text" label="Telefono" />
-            <Input type="text" label="E-mail" />
-            <Input type="text" label="Su mensaje" />
+            <Input type="text" label="(*) E-mail" />
+            <Input type="textarea" label="(*) Su mensaje" rows="5" />
             <Checkbox
               label="He leído y acepto el aviso legal y la política de protección de datos"
               position="right"
               checked={this.state.checked}
               onClick={() => this.check()}
             />
-            <Input type="submit" value="Enviar" disabled/>
-          </form>
+            <Input type="submit" value="Enviar" disabled />
+          </ContactForm>
           <AddressDiv>
             <div>
               <AddressTitle>Tienda</AddressTitle>
