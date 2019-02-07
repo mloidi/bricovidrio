@@ -59,7 +59,6 @@ export default class Map extends Component {
   }
   componentWillReceiveProps(nextProps) {
     let mapReference = nextProps.id ? '#' + nextProps.id : '.react-bingmaps';
-    console.log(mapReference);
     if (this.props.center.join() !== nextProps.center.join()) {
       this.setMapCenter(nextProps.center, mapReference);
     }
