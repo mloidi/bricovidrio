@@ -131,8 +131,8 @@ export default class Home extends Component {
             cellSpacing={10}
             wrapAround={true}
             autoplay={true}
-            autoplayInterval={2000}
-            slideWidth={0.7}
+            animation="zoom"
+            speed={1000}
           >
             <img
               src="https://res.cloudinary.com/mloidi/image/upload/q_auto:best/v1548362088/Bricovidrio/h-bricovidrio-01.jpg"
