@@ -9,11 +9,11 @@ const menuOptions = [
     to: '/nosotros',
     description: 'Cristaleria Bricovidrio'
   },
-  {
-    id: 3,
-    to: '/productos',
-    description: 'Productos'
-  },
+  // {
+  //   id: 3,
+  //   to: '/productos',
+  //   description: 'Productos'
+  // },
   {
     id: 4,
     to: '/trabajos',
@@ -108,7 +108,7 @@ const products = [
     img:
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-instalaciones-comerciales.jpg',
     alt: 'p-instalaciones-comerciales',
-    title: 'Instalaciones comerciales. Cerramiento acristalado Sytemglass',
+    title: 'Instalaciones comerciales.',
     text: [
       'Disponemos en nuestro taller de las últimas tecnologías, herramientas y medios necesarios para llevar a cabo instalaciones comerciales, tanto en oficinas, tiendas, bares, restaurantes, etc.',
       'Nos encargamos de la realización global, desde el proyecto inicial hasta la colocación de acristalamientos para obras, ventanas, puertas correderas, separaciones de ambiente, escaparates, espejos, encimeras para cocina y baños, mamparas fijas y correderas de ducha...',
@@ -265,6 +265,14 @@ const about = [
 
 const projects = [
   {
+    id: 1,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-cristaleria.jpg',
+    alt: 'p-cristaleria',
+    title: 'Cristalería en general',
+    text: [
+      'Llevamos muchos años sirviendo a miles de hogares y empresas, aislando sus viviendas del frío y decorando sus interiores con una amplia gama de productos a medida y de fabricación propia. Mesas de cristal, mamparas de baño, vitrinas, escaparates con decoración de vinilos, correderas de cristal, cortinas de vidrio, espejos, etc. Hay una gran variedad de manufacturas que se le pueden realizar al cristal, como el canto pulido brillante, biselado, esquinas redondeadas, vidrios lacados de colores. Contamos con maquinaría de vanguardia que nos permiten acometer grandes proyectos y también contamos con una grúa para los paneles de gran tamaño.'
+    ],
     description: 'Cristalería en general',
     slug: 'cristaleria-general',
     projects: [
@@ -278,10 +286,19 @@ const projects = [
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548589355/Bricovidrio/20130215224627-1.jpg'
     ],
     link: {
-      to: '/trabajos/cristaleria-general'
+      to: '/trabajos/cristaleria-general',
+      description: 'Trabajos de cristalería en general'
     }
   },
   {
+    id: 2,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-cortinas-cristal.jpg',
+    alt: 'p-cristaleria',
+    title: 'Cortinas de cristal. Cerramiento acristalado Sytemglass',
+    text: [
+      'De fácil instalación, con un mínimo impacto visual en el entorno arquitectónico. Máximo aprovechamiento de espacios infravalorados de la vivienda, como terrazas, porches, galerías, ventanales, etc. Muy prácticas y fáciles de limpiar tanto por dentro, como por fuera, ya que toda la estructura se recoge facilitando su limpieza. Sistema de seguridad con bloqueo infantil y cerradura antirrobo. Los perfiles inferiores pueden estar embutidos, lo que facilita el acceso a sillas de ruedas, carritos de bebés, etc'
+    ],
     description: 'Cortinas de cristal',
     slug: 'cortinas-cristal',
     projects: [
@@ -294,10 +311,21 @@ const projects = [
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590358/Bricovidrio/20110719103020-14.jpg'
     ],
     link: {
-      to: '/trabajos/cortinas-cristal'
+      to: '/trabajos/cortinas-cristal',
+      description: 'Trabajos de cortinas de cristal'
     }
   },
   {
+    id: 3,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-instalaciones-comerciales.jpg',
+    alt: 'p-instalaciones-comerciales',
+    title: 'Instalaciones comerciales.',
+    text: [
+      'Disponemos en nuestro taller de las últimas tecnologías, herramientas y medios necesarios para llevar a cabo instalaciones comerciales, tanto en oficinas, tiendas, bares, restaurantes, etc.',
+      'Nos encargamos de la realización global, desde el proyecto inicial hasta la colocación de acristalamientos para obras, ventanas, puertas correderas, separaciones de ambiente, escaparates, espejos, encimeras para cocina y baños, mamparas fijas y correderas de ducha...',
+      'Disponemos de una amplia variedad de productos avaladas por unos proveedores de garantía y calidad contrastada en el mercado nacional. comerciales, tanto en oficinas, tiendas, bares, restaurantes, etc.'
+    ],
     description: 'Instalaciones comerciales',
     slug: 'instalaciones-comerciales',
     projects: [
@@ -316,10 +344,19 @@ const projects = [
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548590583/Bricovidrio/20110701115957-2.jpg'
     ],
     link: {
-      to: '/trabajos/instalaciones-comerciales'
+      to: '/trabajos/instalaciones-comerciales',
+      description: 'Trabajos de instalaciones comerciales'
     }
   },
   {
+    id: 4,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-vidrios-decorados.jpg',
+    alt: 'p-vidrios-decorados',
+    title: 'Vidrio decorados',
+    text: [
+      'Distintas técnicas se emplean para este fin. El arenado, vidrios lacados, todo tipo de laminados impresos con telas, con las impresiones entre dos cristales y otros con fotos.'
+    ],
     description: 'Vidrios decorados',
     slug: 'vidrio-decorado',
     projects: [
@@ -328,20 +365,38 @@ const projects = [
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208548/Bricovidrio/20120203134304-3.jpg'
     ],
     link: {
-      to: '/trabajos/vidrio-decorado'
+      to: '/trabajos/vidrio-decorado',
+      description: 'Trabajos de vidrio decorado'
     }
   },
   {
+    id: 5,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-vidrieras.jpg',
+    alt: 'p-vidrieras',
+    title: 'Vidrieras',
+    text: [
+      'Es la técnica mediante la cual se pintan cristales siguiendo un patrón y uniéndolos con tiras de plomo. Existen otras técnicas.'
+    ],
     description: 'Vidrieras',
     slug: 'vidrieras',
     projects: [
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208659/Bricovidrio/20110701120804-4.jpg'
     ],
     link: {
-      to: '/trabajos/vidrieras'
+      to: '/trabajos/vidrieras',
+      description: 'Trabajos de vidrieras'
     }
   },
   {
+    id: 6,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-biselados.jpg',
+    alt: 'p-biselados',
+    title: 'Biselados',
+    text: [
+      'Este proceso permite dar un ángulo al canto del cristal, provocando una reflexión diferente a la cara plana. Ideal para cristales de un grosor a partir de 5mm.'
+    ],
     description: 'Biselados',
     slug: 'biselados',
     projects: [
@@ -349,10 +404,19 @@ const projects = [
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208735/Bricovidrio/20110712103245-5.jpg'
     ],
     link: {
-      to: '/trabajos/biselados'
+      to: '/trabajos/biselados',
+      description: 'Trabajos de biselados'
     }
   },
   {
+    id: 7,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-espejos.jpg',
+    alt: 'p-espejos',
+    title: 'Espejos',
+    text: [
+      'Nuestra propuesta es amplia y abarca una gran gama de posibilidades, de formas, de tonos y espesores.'
+    ],
     description: 'Espejos',
     slug: 'espejos',
     projects: [
@@ -361,10 +425,20 @@ const projects = [
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208809/Bricovidrio/20110701120959-6.jpg'
     ],
     link: {
-      to: '/trabajos/espejos'
+      to: '/trabajos/espejos',
+      description: 'Trabajos de espejos'
     }
   },
   {
+    id: 8,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-fusing.jpg',
+    alt: 'p-fusing',
+    title: 'Fusing',
+    text: [
+      'Se trata de una novedosa técnica que emplea hornos con altas temperaturas para fundir vidrios de color sobre unas planchas de vidrio especiales, consiguiendo así bellas soluciones decorativas. de',
+      'Los colores conseguidos son inalterables. Se pueden emplear para decorar espejos de baño, puertas de paso y lavabos de cristal.'
+    ],
     description: 'Fusing',
     slug: 'fusing',
     projects: [
@@ -374,18 +448,34 @@ const projects = [
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549208879/Bricovidrio/20110718102048-7.jpg'
     ],
     link: {
-      to: '/trabajos/fusing'
+      to: '/trabajos/fusing',
+      description: 'Trabajos de Fusing'
     }
   },
   {
+    id: 9,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-mamparas.jpg',
+    alt: 'p-mamparas',
+    title: 'Mamparas de baño',
+    text: [
+      'Fijos, con correderas, distintos tipos de cristas, con o sin decorado.'
+    ],
     description: 'Mamparas de baño',
     slug: 'mamparas-bano',
     projects: [],
     link: {
-      to: '/trabajos/mamparas-bano'
+      to: '/trabajos/mamparas-bano',
+      description: 'Trabajos de mamparas de baño'
     }
   },
   {
+    id: 10,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-lavabos.jpg',
+    alt: 'p-lavabos',
+    title: 'Encimeras de seno integrado',
+    text: [''],
     description: 'Encimeras de seno integrado',
     slug: 'encimeras-seno-integrado',
     projects: [
@@ -393,10 +483,22 @@ const projects = [
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209061/Bricovidrio/20110712101429-10.jpg'
     ],
     link: {
-      to: '/trabajos/encimeras-seno-integrado'
+      to: '/trabajos/encimeras-seno-integrado',
+      description: 'Trabajos de encimeras de seno integrado'
     }
   },
   {
+    id: 11,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-vinilos-decorativos.jpg',
+    alt: 'p-vinilos-decorativos',
+    title: 'Vinilos decorativos',
+    text: [
+      'Una nueva tendencia en decoración permite, de manera rápida y sencilla, decorar tu casa o tu negocio a tu gusto, convirtiéndolo en un espacio personalizado.',
+      'Los vinilos decorativos son muy versátiles y contamos con las herramientas adecuadas para poder llevar a cabo diferentes proyectos y aplicaciones, como por ejemplo, cristal laminado con fotografía impresa, vinilos ácidos con imágenes vectoriales, ideales para tiendas, bares o grandes escaparates.',
+      'Pueden pegarse sobre paredes, suelos, ventanas, puertas, muebles y en general, sobre cualquier superficie lisa, ya sea madera, chapa, plástico, etc.',
+      'El límite está solamente en tu imaginación. Aquí encontrarás muchas ideas para ayudarte en la elección.'
+    ],
     description: 'Decoración en vinilo',
     slug: 'vinilos-decorativos',
     projects: [
@@ -409,15 +511,23 @@ const projects = [
       'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1549209181/Bricovidrio/20110718102737-11.jpg'
     ],
     link: {
-      to: '/trabajos/vinilos-decorativos'
+      to: '/trabajos/vinilos-decorativos',
+      description: 'Trabajos de vinilos decorativos'
     }
   },
   {
+    id: 12,
+    img:
+      'https://res.cloudinary.com/mloidi/image/upload/q_auto:best,c_scale,h_193,w_281/v1548362087/Bricovidrio/p-pegados-por-uv.jpg',
+    alt: 'p-pegados-por-uv',
+    title: 'Pegados por rayos UV',
+    text: ['Adesivo especial, es casi transparente y muy resistente.'],
     description: 'Pegados por rayos UV',
     slug: 'pegados-rayos-uv',
     projects: [],
     link: {
-      to: '/trabajos/pegados-rayos-uv'
+      to: '/trabajos/pegados-rayos-uv',
+      description: 'Trabajos de pegados por rayos UV'
     }
   }
 ];

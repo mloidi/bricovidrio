@@ -5,25 +5,25 @@ import styled from 'styled-components';
 
 import { DataService } from '../Service/data.service';
 import PageMainInfo from '../Components/PageMainInfo';
+import ItemDetails from '../Components/ItemDetails';
 
- const ProjectsDiv = styled.div`
+const ProjectsDiv = styled.div`
   background-color: white;
   margin: 2rem 4rem 2rem 4rem;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 1rem 0 1rem 0;
   font-size: 1rem;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 25% auto;
   justify-content: left;
 `;
 
- const SubMenu = styled.ul`
+const SubMenu = styled.ul`
   margin: 0;
-  padding: 10px;
   font-size: 1.5rem;
   list-style-type: none;
 `;
 
- const SubMenuElement = styled.li`
+const SubMenuElement = styled.li`
   background-color: #1352b1;
   border: 0;
   margin: 0 0 0.1rem 0;
@@ -33,7 +33,7 @@ import PageMainInfo from '../Components/PageMainInfo';
   position: relative;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   &:hover {
     background-color: #1265e3;
@@ -45,45 +45,35 @@ import PageMainInfo from '../Components/PageMainInfo';
     }
   }
   a {
-    margin: 1rem;
+    margin: 0.5rem;
     color: white;
     text-decoration: none;
     outline: none;
     width: 100%;
   }
 `;
- const SubMenuElementSelected = styled.li`
-  background-color: white;
+const SubMenuElementSelected = styled.li`
+  background-color: #1265e3;
   border: 0;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0 0 0.1rem 0;
-  color: #1352b1;
+  color: white;
   display: flex;
   align-items: center;
   position: relative;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 0.7em;
+  font-size: 1rem;
   cursor: pointer;
   &:focus {
     outline: none;
   }
 `;
 
- const ProjectsDetailDiv = styled.div`
+const ProjectDetail = styled.div`
   background-color: white;
   padding: 0 1rem 1rem 1rem;
   font-size: 1rem;
-`;
-
- const ProjectsDetailTitle = styled.div`
-  color: #1352b1;
-  font-size: 2rem;
-  margin: 1rem 0 0.5rem 0;
-`;
-
- const ProjectsDetailImg = styled.img`
-  margin: 0.5rem;
 `;
 
 class Projects extends Component {
@@ -143,19 +133,9 @@ class Projects extends Component {
               </React.Fragment>
             ))}
           </SubMenu>
-          <ProjectsDetailDiv>
-            <ProjectsDetailTitle>
-              {this.state.selectedProject.description}
-            </ProjectsDetailTitle>
-            {this.state.selectedProject.projects &&
-              Object.keys(this.state.selectedProject.projects).map(key => (
-                <ProjectsDetailImg
-                  key={key}
-                  src={this.state.selectedProject.projects[key]}
-                  alt={this.state.selectedProject.projects[key]}
-                />
-              ))}
-          </ProjectsDetailDiv>
+          <ProjectDetail>
+            <ItemDetails item={this.state.selectedProject}/>
+          </ProjectDetail>
         </ProjectsDiv>
       </React.Fragment>
     );
