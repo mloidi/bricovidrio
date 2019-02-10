@@ -6,7 +6,7 @@ import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 
 import styled from 'styled-components';
 
-const ProductDiv = styled.div`
+const ItemDiv = styled.div`
   background-color: white;
   margin: 2rem 4rem 2rem 4rem;
   padding: 1rem 1rem 1rem 1rem;
@@ -16,23 +16,23 @@ const ProductDiv = styled.div`
   justify-content: left;
 `;
 
-const ProductImg = styled.img`
+const ItemImg = styled.img`
   margin: 0.5rem 0.2rem 0.5rem 0.5rem;
 `;
 
-const ProductTitle = styled.div`
+const ItemTitle = styled.div`
   color: #1352b1;
   text-transform: uppercase;
   margin: 0.5rem 0.2rem 0 0.5rem;
 `;
 
-const ProductText = styled.div`
+const ItemText = styled.div`
   margin: 0.5rem 0.2rem 1rem 0.5rem;
   font-size: 0.9rem;
   color: grey;
 `;
 
-const LinkDiv = styled.div`
+const ItemLink = styled.div`
   background-color: #1352b1;
   padding: 0.5rem;
   margin: 0.2rem 0.2rem 0 0.5rem;
@@ -59,23 +59,23 @@ export default class Item extends Component {
   render() {
     const { item } = this.props;
     return (
-      <ProductDiv>
-        <ProductImg src={item.img} alt={item.alt} />
+      <ItemDiv>
+        <ItemImg src={item.img} alt={item.alt} />
         <div>
-          <ProductTitle>{item.title}</ProductTitle>
-          {Object.keys(item.text).map(key => (
-            <ProductText key={key}>{item.text[key]}</ProductText>
+          <ItemTitle>{item.title}</ItemTitle>
+          {item.text && Object.keys(item.text).map(key => (
+            <ItemText key={key}>{item.text[key]}</ItemText>
           ))}
           {item.link && (
-            <LinkDiv>
+            <ItemLink>
               <Link className="link" to={item.link.to}>
                 {item.link.description}{' '}
                 <FontAwesomeIcon icon={faLongArrowAltRight} />
               </Link>
-            </LinkDiv>
+            </ItemLink>
           )}
         </div>
-      </ProductDiv>
+      </ItemDiv>
     );
   }
 }
