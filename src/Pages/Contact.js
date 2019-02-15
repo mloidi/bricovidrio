@@ -299,37 +299,6 @@ export default class Contact extends Component {
             </div>
           </AddressDiv>
         </ContactDiv>
-        <MapDiv>
-          <Map
-            center={[42.81987, -1.61323]}
-            id="mapBricovidrio"
-            zoom={13}
-            mapTypeId={'road'}
-            navigationBarMode={'compact'}
-            supportedMapTypes={['road']}
-            infoboxesWithPushPins={[
-              {
-                location: [42.80895, -1.61174],
-                addHandler: 'mouseover',
-                infoboxOption: {
-                  title: 'Tienda',
-                  description:
-                    'Calle Concejo de Olaz, 1, 31016 Mendillorri (Navarra)'
-                },
-                pushPinOption: { title: 'Tienda', description: '' }
-              },
-              {
-                location: [42.82582, -1.60555],
-                addHandler: 'mouseover',
-                infoboxOption: {
-                  title: 'Taller',
-                  description: 'Calle Irumuga, 9, 31620 Huarte (Navarra)'
-                },
-                pushPinOption: { title: 'Taller', description: '' }
-              }
-            ]}
-          />
-        </MapDiv>
       </React.Fragment>
     );
   }
