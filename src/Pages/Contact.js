@@ -27,7 +27,6 @@ const ContactDiv = styled.div`
   font-size: 1rem;
   display: grid;
   grid-template-columns: auto auto;
-  /* justify-content: left; */
 `;
 
 const ContactTitle = styled.div`
