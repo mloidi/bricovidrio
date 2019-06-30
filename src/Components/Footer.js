@@ -90,19 +90,7 @@ export default class Footer extends Component {
               </FooterDataLeftContentBottom>
             </FooterDataLeftContent>
           </FooterDataLeft>
-          <FooterDataCenter>
-            <AddressContent>
-              <AddressContentLeft>TIENDA</AddressContentLeft>
-              <AddressContentRight>
-                <div>Calle Concejo de Olaz, 1</div>
-                <div>31016 - Mendillorri (Navarra)</div>
-                <div>
-                  <FontAwesomeIcon icon={faPhone} /> /{' '}
-                  <FontAwesomeIcon icon={faFax} /> 948 163 781
-                </div>
-              </AddressContentRight>
-            </AddressContent>
-          </FooterDataCenter>
+          <FooterDataCenter />
           <FooterDataRight>
             <AddressContent>
               <AddressContentLeft>taller</AddressContentLeft>

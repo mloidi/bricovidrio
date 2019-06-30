@@ -272,18 +272,6 @@ export default class Contact extends Component {
           </ContactForm>
           <AddressDiv>
             <div>
-              <AddressTitle>Tienda</AddressTitle>
-              <AddressText>Calle Concejo de Olaz, 1</AddressText>
-              <AddressText>31016 - Mendillorri (Navarra)</AddressText>
-              <AddressText>
-                <FontAwesomeIcon icon={faPhone} /> /{' '}
-                <FontAwesomeIcon icon={faFax} /> 948 163 781
-              </AddressText>
-              <AddressText>
-                <strong>Horario</strong>
-              </AddressText>
-              <AddressText>Lunes a viernes de 17:00 a 19:30 horas</AddressText>
-              <br />
               <AddressTitle>Taller</AddressTitle>
               <AddressText>Pol. Areta Calle G - Nave 13</AddressText>
               <AddressText>31620 - Huarte (Navarra) </AddressText>
